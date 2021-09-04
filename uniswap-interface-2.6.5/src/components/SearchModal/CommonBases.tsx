@@ -1,9 +1,10 @@
 import React from 'react'
 import { Text } from 'rebass'
-import { ChainId, Currency, currencyEquals, ETHER, Token } from '@uniswap/sdk'
+// import { ChainId, Currency, currencyEquals, ETHER, Token } from '@uniswap/sdk'
+import { ChainId, Currency, currencyEquals, ETHER } from '@uniswap/sdk'
 import styled from 'styled-components'
-
-import { SUGGESTED_BASES } from '../../constants'
+// update 20210804
+// import { SUGGESTED_BASES } from '../../constants'
 import { AutoColumn } from '../Column'
 import QuestionHelper from '../QuestionHelper'
 import { AutoRow } from '../Row'
@@ -53,11 +54,11 @@ export default function CommonBases({
         >
           <CurrencyLogo currency={ETHER} style={{ marginRight: 8 }} />
           <Text fontWeight={500} fontSize={16}>
-            ETH
+            {ETHER.symbol}
           </Text>
         </BaseWrapper>
-        {(chainId ? SUGGESTED_BASES[chainId] : []).map((token: Token) => {
-          const selected = selectedCurrency instanceof Token && selectedCurrency.address === token.address
+        {/*{(chainId ? SUGGESTED_BASES[chainId] : []).map((token: Token) => {
+          // const selected = selectedCurrency instanceof Token && selectedCurrency.address === token.address
           return (
             <BaseWrapper onClick={() => !selected && onSelect(token)} disable={selected} key={token.address}>
               <CurrencyLogo currency={token} style={{ marginRight: 8 }} />
@@ -66,7 +67,7 @@ export default function CommonBases({
               </Text>
             </BaseWrapper>
           )
-        })}
+        })}*/}
       </AutoRow>
     </AutoColumn>
   )

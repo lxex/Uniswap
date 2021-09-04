@@ -196,8 +196,10 @@ const ListRow = memo(function ListRow({ listUrl, onBack }: { listUrl: string; on
           <PopoverContainer show={true} ref={setPopperElement as any} style={styles.popper} {...attributes.popper}>
             <div>{list && listVersionLabel(list.version)}</div>
             <SeparatorDark />
-            <ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>View list</ExternalLink>
-            <UnpaddedLinkStyledButton onClick={handleRemoveList} disabled={Object.keys(listsByUrl).length === 1}>
+            {/*update 20210804<ExternalLink href={`https://tokenlists.org/token-list?url=${listUrl}`}>View list</ExternalLink>*/}
+            <ExternalLink href="#">View list</ExternalLink>
+            {/*update 20210804<UnpaddedLinkStyledButton onClick={handleRemoveList} disabled={Object.keys(listsByUrl).length === 1}>*/}
+            <UnpaddedLinkStyledButton onClick={handleRemoveList} disabled>
               Remove list
             </UnpaddedLinkStyledButton>
             {pending && (
@@ -372,7 +374,8 @@ export function ListSelect({ onDismiss, onBack }: { onDismiss: () => void; onBac
       <Separator />
 
       <div style={{ padding: '16px', textAlign: 'center' }}>
-        <ExternalLink href="https://tokenlists.org">Browse lists</ExternalLink>
+        {/*update 20210804<ExternalLink href="https://tokenlists.org">Browse lists</ExternalLink>*/}
+        <ExternalLink href="#">Browse lists</ExternalLink>
       </div>
     </Column>
   )

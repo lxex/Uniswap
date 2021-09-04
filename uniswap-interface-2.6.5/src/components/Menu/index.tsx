@@ -1,11 +1,11 @@
 import React, { useRef } from 'react'
-import { Info, BookOpen, Code, PieChart, MessageCircle } from 'react-feather'
+// import { Info, BookOpen, Code, PieChart, MessageCircle } from 'react-feather'
 import styled from 'styled-components'
 import { ReactComponent as MenuIcon } from '../../assets/images/menu.svg'
 import { useOnClickOutside } from '../../hooks/useOnClickOutside'
 import useToggle from '../../hooks/useToggle'
 
-import { ExternalLink } from '../../theme'
+// import { ExternalLink } from '../../theme'
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
@@ -64,21 +64,21 @@ const MenuFlyout = styled.span`
   z-index: 100;
 `
 
-const MenuItem = styled(ExternalLink)`
-  flex: 1;
-  padding: 0.5rem 0.5rem;
-  color: ${({ theme }) => theme.text2};
-  :hover {
-    color: ${({ theme }) => theme.text1};
-    cursor: pointer;
-    text-decoration: none;
-  }
-  > svg {
-    margin-right: 8px;
-  }
-`
+// const MenuItem = styled(ExternalLink)`
+//   flex: 1;
+//   padding: 0.5rem 0.5rem;
+//   color: ${({ theme }) => theme.text2};
+//   :hover {
+//     color: ${({ theme }) => theme.text1};
+//     cursor: pointer;
+//     text-decoration: none;
+//   }
+//   > svg {
+//     margin-right: 8px;
+//   }
+// `
 
-const CODE_LINK = 'https://github.com/Uniswap/uniswap-interface'
+// const CODE_LINK = 'https://github.com/Uniswap/uniswap-interface'
 
 export default function Menu() {
   const node = useRef<HTMLDivElement>()
@@ -88,13 +88,14 @@ export default function Menu() {
 
   return (
     // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/30451
+    // update 20210804 
     <StyledMenu ref={node as any}>
       <StyledMenuButton onClick={toggle}>
         <StyledMenuIcon />
       </StyledMenuButton>
       {open && (
         <MenuFlyout>
-          <MenuItem id="link" href="https://uniswap.org/">
+          {/*<MenuItem id="link" href="https://uniswap.org/">
             <Info size={14} />
             About
           </MenuItem>
@@ -113,7 +114,7 @@ export default function Menu() {
           <MenuItem id="link" href="https://uniswap.info/">
             <PieChart size={14} />
             Analytics
-          </MenuItem>
+          </MenuItem>*/}
         </MenuFlyout>
       )}
     </StyledMenu>

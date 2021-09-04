@@ -10,6 +10,9 @@ import { AppDispatch, AppState } from '../index'
 import { tryParseAmount } from '../swap/hooks'
 import { useCurrencyBalances } from '../wallet/hooks'
 import { Field, typeInput } from './actions'
+// add shitao 20210804
+// import { useTranslation } from 'react-i18next'
+// const t = useTranslation()
 
 const ZERO = JSBI.BigInt(0)
 
@@ -141,6 +144,7 @@ export function useDerivedMintInfo(
 
   if (!parsedAmounts[Field.CURRENCY_A] || !parsedAmounts[Field.CURRENCY_B]) {
     error = error ?? 'Enter an amount'
+    // error = error ?? "{t('enterAmount')}"
   }
 
   const { [Field.CURRENCY_A]: currencyAAmount, [Field.CURRENCY_B]: currencyBAmount } = parsedAmounts

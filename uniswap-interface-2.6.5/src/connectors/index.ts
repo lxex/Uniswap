@@ -26,17 +26,24 @@ export function getNetworkLibrary(): Web3Provider {
   return (networkLibrary = networkLibrary ?? new Web3Provider(network.provider as any))
 }
 
+//update 20210804 shitao
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42]
+  supportedChainIds: [1, 3, 4, 5, 42, 1110]
 })
 
-// mainnet only
+// mainnet only update shitao
 export const walletconnect = new WalletConnectConnector({
   rpc: { 1: NETWORK_URL },
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
   pollingInterval: 15000
 })
+// export const walletconnect = new WalletConnectConnector({
+//   rpc: { 1110: NETWORK_URL },
+//   bridge: 'https://bridge.walletconnect.org',
+//   qrcode: true,
+//   pollingInterval: 15000
+// })
 
 // mainnet only
 export const fortmatic = new FortmaticConnector({
