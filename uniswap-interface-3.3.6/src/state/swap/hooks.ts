@@ -87,11 +87,15 @@ export function tryParseAmount<T extends Currency>(value?: string, currency?: T)
   // necessary for all paths to return a value
   return undefined
 }
-
+// update 20210903
+// const BAD_RECIPIENT_ADDRESSES: { [address: string]: true } = {
+//   '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f': true, // v2 factory
+//   '0xf164fC0Ec4E93095b804a4795bBe1e041497b92a': true, // v2 router 01
+//   '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D': true, // v2 router 02
+// }
 const BAD_RECIPIENT_ADDRESSES: { [address: string]: true } = {
-  '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f': true, // v2 factory
-  '0xf164fC0Ec4E93095b804a4795bBe1e041497b92a': true, // v2 router 01
-  '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D': true, // v2 router 02
+  '0x1f8a2ffd90b2d8dbae3eef5628f8699ddd85d309': true, // v2 factory
+  '0x397a3356a93ababab475f53d77d2e26250ae0e6b': true, // v2 router 02
 }
 
 /**

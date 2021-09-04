@@ -1,10 +1,15 @@
 import { ChainId } from '@uniswap/sdk-core'
 import { FACTORY_ADDRESS as V3_FACTORY_ADDRESS } from '@uniswap/v3-sdk'
 import { constructSameAddressMap } from '../utils/constructSameAddressMap'
+// update 20210903
+// export const UNI_ADDRESS = constructSameAddressMap('0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984')
+// export const MULTICALL2_ADDRESSES = constructSameAddressMap('0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696')
+// export const V2_ROUTER_ADDRESS = constructSameAddressMap('0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D')
 
-export const UNI_ADDRESS = constructSameAddressMap('0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984')
-export const MULTICALL2_ADDRESSES = constructSameAddressMap('0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696')
-export const V2_ROUTER_ADDRESS = constructSameAddressMap('0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D')
+export const UNI_ADDRESS = constructSameAddressMap('0x99dfa8964e635ebdbe347b02422083bfc3f20da0')
+export const MULTICALL2_ADDRESSES = constructSameAddressMap('0x31339b3393ca6448a9d30f012c8a6ad9fb87806e')
+export const V2_ROUTER_ADDRESS = constructSameAddressMap('0x397a3356a93ababab475f53d77d2e26250ae0e6b')
+
 export const GOVERNANCE_ADDRESS = constructSameAddressMap('0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F')
 export const TIMELOCK_ADDRESS = constructSameAddressMap('0x1a9C8182C09F50C8318d769245beA52c32BE35BC')
 export const MERKLE_DISTRIBUTOR_ADDRESS: { [chainId in ChainId]?: string } = {

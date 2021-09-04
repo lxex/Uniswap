@@ -2,6 +2,7 @@
 import { ChainId, Token, WETH9 } from '@uniswap/sdk-core'
 import { AMPL, DAI, FEI, FRAX, FXS, MIR, renBTC, TRIBE, UMA, UNI, USDC, USDT, UST, WBTC } from './tokens'
 
+// update 20210903
 type ChainTokenList = {
   readonly [chainId in ChainId]: Token[]
 }
@@ -31,6 +32,7 @@ const WETH_ONLY: ChainTokenList = {
   [ChainId.RINKEBY]: [WETH9[ChainId.RINKEBY]],
   [ChainId.GÖRLI]: [WETH9[ChainId.GÖRLI]],
   [ChainId.KOVAN]: [WETH9[ChainId.KOVAN]],
+  [ChainId.XOS]: [WETH9[ChainId.XOS]],
 }
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {

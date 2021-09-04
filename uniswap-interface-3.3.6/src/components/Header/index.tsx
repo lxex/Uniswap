@@ -300,12 +300,13 @@ export const StyledMenuButton = styled.button`
     stroke: ${({ theme }) => theme.text1};
   }
 `
-
+// update 20210903
 const NETWORK_LABELS: { [chainId in ChainId]?: string } = {
   [ChainId.RINKEBY]: 'Rinkeby',
   [ChainId.ROPSTEN]: 'Ropsten',
   [ChainId.GÖRLI]: 'Görli',
   [ChainId.KOVAN]: 'Kovan',
+  [ChainId.XOS]: 'XOS',
 }
 
 export default function Header() {
@@ -357,9 +358,9 @@ export default function Header() {
         >
           {t('pool')}
         </StyledNavLink>
-        <StyledNavLink id={`stake-nav-link`} to={'/vote'}>
+        {/*<StyledNavLink id={`stake-nav-link`} to={'/vote'}>
           Vote
-        </StyledNavLink>
+        </StyledNavLink>*/}
         <StyledExternalLink id={`stake-nav-link`} href={'https://info.uniswap.org'}>
           Charts <span style={{ fontSize: '11px', textDecoration: 'none !important' }}>↗</span>
         </StyledExternalLink>

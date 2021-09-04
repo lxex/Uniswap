@@ -26,7 +26,7 @@ interface PermitInfo {
   // version is optional, and if omitted, will not be included in the domain
   version?: string
 }
-
+// update 20210903
 // todo: read this information from extensions on token lists or elsewhere (permit registry?)
 const PERMITTABLE_TOKENS: {
   [chainId in ChainId]: {
@@ -51,6 +51,9 @@ const PERMITTABLE_TOKENS: {
   },
   [ChainId.KOVAN]: {
     [UNI[ChainId.KOVAN].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
+  },
+  [ChainId.XOS]: {
+    [UNI[ChainId.XOS].address]: { type: PermitType.AMOUNT, name: 'Uniswap' },
   },
 }
 

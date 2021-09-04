@@ -57,7 +57,7 @@ export default function ClaimModal() {
 
   // get user claim data
   const userClaimData = useUserClaimData(account)
-
+  console.log(userClaimData)
   // monitor the status of the claim from contracts and txns
   const { claimCallback } = useClaimCallback(account)
   const unclaimedAmount: CurrencyAmount<Token> | undefined = useUserUnclaimedAmount(account)

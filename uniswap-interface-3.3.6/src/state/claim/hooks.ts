@@ -28,7 +28,7 @@ function fetchClaim(account: string, chainId: ChainId): Promise<UserClaimData | 
   const formatted = isAddress(account)
   if (!formatted) return Promise.reject(new Error('Invalid address'))
   const key = `${chainId}:${account}`
-
+  // console.log(key)
   return (CLAIM_PROMISES[key] =
     CLAIM_PROMISES[key] ??
     fetch('https://merkle-drop-1.uniswap.workers.dev/', {

@@ -18,7 +18,7 @@ const WALLETCONNECT_BRIDGE_URL = process.env.REACT_APP_WALLETCONNECT_BRIDGE_URL
 if (typeof INFURA_KEY === 'undefined') {
   throw new Error(`REACT_APP_INFURA_KEY must be a defined environment variable`)
 }
-
+// update 20210903
 const NETWORK_URLS: {
   [chainId in ChainId]: string
 } = {
@@ -27,9 +27,17 @@ const NETWORK_URLS: {
   [ChainId.ROPSTEN]: `https://ropsten.infura.io/v3/${INFURA_KEY}`,
   [ChainId.GÖRLI]: `https://goerli.infura.io/v3/${INFURA_KEY}`,
   [ChainId.KOVAN]: `https://kovan.infura.io/v3/${INFURA_KEY}`,
+  [ChainId.XOS]: `https://mainnet.eros.fund`,
 }
 
-const SUPPORTED_CHAIN_IDS = [ChainId.MAINNET, ChainId.RINKEBY, ChainId.ROPSTEN, ChainId.KOVAN, ChainId.GÖRLI]
+const SUPPORTED_CHAIN_IDS = [
+  ChainId.MAINNET,
+  ChainId.RINKEBY,
+  ChainId.ROPSTEN,
+  ChainId.KOVAN,
+  ChainId.GÖRLI,
+  ChainId.XOS,
+]
 
 export const network = new NetworkConnector({
   urls: NETWORK_URLS,

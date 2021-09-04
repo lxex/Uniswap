@@ -1,6 +1,6 @@
 import { ChainId } from '@uniswap/sdk-core'
 import { GOVERNANCE_ADDRESS, TIMELOCK_ADDRESS, UNI_ADDRESS } from './addresses'
-
+// update 20210903
 export const COMMON_CONTRACT_NAMES: { [chainId in ChainId]?: { [address: string]: string } } = {
   [ChainId.MAINNET]: {
     [UNI_ADDRESS[ChainId.MAINNET]]: 'UNI',
@@ -26,6 +26,12 @@ export const COMMON_CONTRACT_NAMES: { [chainId in ChainId]?: { [address: string]
     [UNI_ADDRESS[ChainId.GÖRLI]]: 'Goerli UNI',
     [GOVERNANCE_ADDRESS[ChainId.GÖRLI]]: 'Goerli Governance',
     [TIMELOCK_ADDRESS[ChainId.GÖRLI]]: 'Goerli Timelock',
+  },
+
+  [ChainId.XOS]: {
+    [UNI_ADDRESS[ChainId.XOS]]: 'XOS UNI',
+    [GOVERNANCE_ADDRESS[ChainId.XOS]]: 'XOS Governance',
+    [TIMELOCK_ADDRESS[ChainId.XOS]]: 'XOS Timelock',
   },
 }
 

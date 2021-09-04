@@ -1,11 +1,12 @@
 import { ChainId } from '@uniswap/sdk-core'
-
+// update 20210903
 const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
   1: '',
   3: 'ropsten.',
   4: 'rinkeby.',
   5: 'goerli.',
   42: 'kovan.',
+  1110: 'xos.',
 }
 
 export enum ExplorerDataType {
@@ -22,6 +23,7 @@ export enum ExplorerDataType {
  * @param type the type of the data
  */
 export function getExplorerLink(chainId: ChainId, data: string, type: ExplorerDataType): string {
+  return `https://explorer.eros.fund`
   const prefix = `https://${ETHERSCAN_PREFIXES[chainId] || ETHERSCAN_PREFIXES[1]}etherscan.io`
 
   switch (type) {
