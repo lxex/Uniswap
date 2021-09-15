@@ -29,6 +29,12 @@ Install dependencies
 yarn install
 ```
 
+Run build
+
+```sh
+yarn build
+```
+
 Run tests
 
 ```sh
