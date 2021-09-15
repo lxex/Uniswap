@@ -117,7 +117,8 @@
     "workbox-strategies": "^6.1.0"
   },
   "resolutions": {
-    "@walletconnect/web3-provider": "1.4.2-rc.2"
+    "@walletconnect/web3-provider": "1.4.2-rc.2",
+    "@uniswap/sdk-core": "3.0.0-alpha.1"
   },
   "scripts": {
     "compile-contract-types": "yarn compile-external-abi-types && yarn compile-v3-contract-types",
@@ -149,5 +150,7 @@
     ]
   },
   "license": "GPL-3.0-or-later",
-  "dependencies": {}
+  "dependencies": {
+    "@uniswap/sdk-core": "/Users/tommy/Documents/eros_github/erosswap-sdk/sdk-core"
+  }
 }
