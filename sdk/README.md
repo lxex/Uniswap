@@ -35,6 +35,33 @@ Run build
 yarn build
 ```
 
+How to use sdk for erosswap-interface
+
+```sh
+cd erosswap-interface
+npm install --save  /d/Projects/src/github.com/lxex/erosswap/sdk
+yarn add  /d/Projects/src/github.com/lxex/erosswap/sdk
+yarn cache
+yarn
+yarn start
+```
+package.json auto:
+'
+...
+"dependencies": {
+    "@uniswap/sdk": "D:/Projects/src/github.com/lxex/erosswap/sdk"
+  }
+...
+'
+If the package conflicts later, add:
+'
+...
+"resolutions": { 
+ "@uniswap/sdk-core": "3.0.0-alpha.1" 
+ }, 
+...
+'
+
 Run tests
 
 ```sh
