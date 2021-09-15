@@ -16,37 +16,39 @@ export function isAddress(value: any): string | false {
     return false
   }
 }
-
-const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
-  1: '',
-  3: 'ropsten.',
-  4: 'rinkeby.',
-  5: 'goerli.',
-  42: 'kovan.'
-}
+// update 20210915
+// const ETHERSCAN_PREFIXES: { [chainId in ChainId]: string } = {
+//   1: '',
+//   3: 'ropsten.',
+//   4: 'rinkeby.',
+//   5: 'goerli.',
+//   42: 'kovan.',
+//   1110: 'xos.'
+// }
 
 export function getEtherscanLink(
   chainId: ChainId,
   data: string,
   type: 'transaction' | 'token' | 'address' | 'block'
 ): string {
-  const prefix = `https://${ETHERSCAN_PREFIXES[chainId] || ETHERSCAN_PREFIXES[1]}etherscan.io`
+  return `https://explorer.eros.fund`
+  // const prefix = `https://${ETHERSCAN_PREFIXES[chainId] || ETHERSCAN_PREFIXES[1]}etherscan.io`
 
-  switch (type) {
-    case 'transaction': {
-      return `${prefix}/tx/${data}`
-    }
-    case 'token': {
-      return `${prefix}/token/${data}`
-    }
-    case 'block': {
-      return `${prefix}/block/${data}`
-    }
-    case 'address':
-    default: {
-      return `${prefix}/address/${data}`
-    }
-  }
+  // switch (type) {
+  //   case 'transaction': {
+  //     return `${prefix}/tx/${data}`
+  //   }
+  //   case 'token': {
+  //     return `${prefix}/token/${data}`
+  //   }
+  //   case 'block': {
+  //     return `${prefix}/block/${data}`
+  //   }
+  //   case 'address':
+  //   default: {
+  //     return `${prefix}/address/${data}`
+  //   }
+  // }
 }
 
 // shorten the checksummed version of the input address to have 0x + 4 characters at start and end

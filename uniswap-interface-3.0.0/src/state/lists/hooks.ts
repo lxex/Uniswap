@@ -26,7 +26,7 @@ export class WrappedTokenInfo extends Token {
 }
 
 export type TokenAddressMap = Readonly<{ [chainId in ChainId]: Readonly<{ [tokenAddress: string]: WrappedTokenInfo }> }>
-
+// update 20210915
 /**
  * An empty result, useful as a default.
  */
@@ -35,7 +35,8 @@ const EMPTY_LIST: TokenAddressMap = {
   [ChainId.RINKEBY]: {},
   [ChainId.ROPSTEN]: {},
   [ChainId.GÖRLI]: {},
-  [ChainId.MAINNET]: {}
+  [ChainId.MAINNET]: {},
+  [ChainId.XOS]: {}
 }
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =
