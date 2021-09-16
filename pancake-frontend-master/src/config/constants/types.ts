@@ -9,9 +9,13 @@ export type TranslatableText =
         [key: string]: string | number
       }
     }
+// update 20210914
+// export interface Address {
+//   97?: string
+//   56: string
+// }
 export interface Address {
-  97?: string
-  56: string
+  1110?: string
 }
 
 export interface SerializedToken {

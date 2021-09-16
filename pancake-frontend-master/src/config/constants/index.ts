@@ -1,26 +1,42 @@
 import { ChainId, JSBI, Percent, Token } from '@pancakeswap/sdk'
 import { mainnetTokens, testnetTokens } from './tokens'
 
-export const ROUTER_ADDRESS = '0x10ED43C718714eb63d5aA57B78B54704E256024E'
+// export const ROUTER_ADDRESS = '0x10ED43C718714eb63d5aA57B78B54704E256024E'
+export const ROUTER_ADDRESS = '0x397a3356a93ababab475f53d77d2e26250ae0e6b'
 
 // a list of tokens by chain
 type ChainTokenList = {
   readonly [chainId in ChainId]: Token[]
 }
 
+// update 20210914
 // used to construct intermediary pairs for trading
+// export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
+//   [ChainId.MAINNET]: [
+//     mainnetTokens.wbnb,
+//     mainnetTokens.cake,
+//     mainnetTokens.busd,
+//     mainnetTokens.usdt,
+//     mainnetTokens.btcb,
+//     mainnetTokens.ust,
+//     mainnetTokens.eth,
+//     mainnetTokens.usdc,
+//   ],
+//   [ChainId.TESTNET]: [testnetTokens.wbnb, testnetTokens.cake, testnetTokens.busd],
+// }
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.MAINNET]: [
-    mainnetTokens.wbnb,
-    mainnetTokens.cake,
-    mainnetTokens.busd,
+    mainnetTokens.wxos,
+    mainnetTokens.eros,
+    mainnetTokens.god,
     mainnetTokens.usdt,
-    mainnetTokens.btcb,
-    mainnetTokens.ust,
-    mainnetTokens.eth,
-    mainnetTokens.usdc,
   ],
-  [ChainId.TESTNET]: [testnetTokens.wbnb, testnetTokens.cake, testnetTokens.busd],
+  [ChainId.TESTNET]: [
+    mainnetTokens.wxos,
+    mainnetTokens.eros,
+    mainnetTokens.god,
+    mainnetTokens.usdt,
+  ],
 }
 
 /**
@@ -41,22 +57,37 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
 }
 
 // used for display in the default list when adding liquidity
+// export const SUGGESTED_BASES: ChainTokenList = {
+//   [ChainId.MAINNET]: [mainnetTokens.busd, mainnetTokens.cake, mainnetTokens.btcb],
+//   [ChainId.TESTNET]: [testnetTokens.wbnb, testnetTokens.cake, testnetTokens.busd],
+// }
 export const SUGGESTED_BASES: ChainTokenList = {
-  [ChainId.MAINNET]: [mainnetTokens.busd, mainnetTokens.cake, mainnetTokens.btcb],
-  [ChainId.TESTNET]: [testnetTokens.wbnb, testnetTokens.cake, testnetTokens.busd],
+  [ChainId.MAINNET]: [mainnetTokens.wxos, mainnetTokens.eros, mainnetTokens.god, mainnetTokens.usdt],
+  [ChainId.TESTNET]: [testnetTokens.wxos, testnetTokens.eros, testnetTokens.god, testnetTokens.usdt],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
+// export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
+//   [ChainId.MAINNET]: [mainnetTokens.wbnb, mainnetTokens.dai, mainnetTokens.busd, mainnetTokens.usdt],
+//   [ChainId.TESTNET]: [testnetTokens.wbnb, testnetTokens.cake, testnetTokens.busd],
+// }
 export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
-  [ChainId.MAINNET]: [mainnetTokens.wbnb, mainnetTokens.dai, mainnetTokens.busd, mainnetTokens.usdt],
-  [ChainId.TESTNET]: [testnetTokens.wbnb, testnetTokens.cake, testnetTokens.busd],
+  [ChainId.MAINNET]: [mainnetTokens.wxos, mainnetTokens.eros, mainnetTokens.god, mainnetTokens.usdt],
+  [ChainId.TESTNET]: [testnetTokens.wxos, testnetTokens.eros, testnetTokens.god, testnetTokens.usdt],
 }
 
+// export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
+//   [ChainId.MAINNET]: [
+//     [mainnetTokens.cake, mainnetTokens.wbnb],
+//     [mainnetTokens.busd, mainnetTokens.usdt],
+//     [mainnetTokens.dai, mainnetTokens.usdt],
+//   ],
+// }
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
   [ChainId.MAINNET]: [
-    [mainnetTokens.cake, mainnetTokens.wbnb],
-    [mainnetTokens.busd, mainnetTokens.usdt],
-    [mainnetTokens.dai, mainnetTokens.usdt],
+    [mainnetTokens.eros, mainnetTokens.wxos],
+    [mainnetTokens.god, mainnetTokens.usdt],
+    [mainnetTokens.wxos, mainnetTokens.usdt],
   ],
 }
 

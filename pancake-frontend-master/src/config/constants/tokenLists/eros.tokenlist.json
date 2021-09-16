@@ -1,0 +1,46 @@
+{
+  "name": "Eros Default List",
+  "timestamp": "2021-05-06T00:00:00Z",
+  "version": {
+    "major": 3,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://join.eros.fund/XOS.png",
+  "keywords": ["erosswap", "default"],
+  "tokens": [
+    {
+      "name": "XOS TOKEN",
+      "symbol": "XOS",
+      "address": "0xf449f6a4560c60d3856afcc23d4a2e39c16e6dcd",
+      "chainId": 1110,
+      "decimals": 18,
+      "logoURI": "https://join.eros.fund/XOS.png"
+    },
+    {
+      "name": "GOD TOKEN",
+      "symbol": "GOD",
+      "address": "0x99dfa8964e635ebdbe347b02422083bfc3f20da0",
+      "chainId": 1110,
+      "decimals": 18,
+      "logoURI": "https://join.eros.fund/GOD.png"
+    },
+    {
+      "name": "EROS Token",
+      "symbol": "EROS",
+      "address": "0x48b978a8250678f95663e8fbe3a1339fcd4fe943",
+      "chainId": 1110,
+      "decimals": 18,
+      "logoURI": "https://join.eros.fund/EROS.png"
+    },
+    {
+      "name": "Tether USD",
+      "symbol": "USDT",
+      "address": "0x98a3d8d7f90dd73cba99b3b1315f5bc9d96280c6",
+      "chainId": 1110,
+      "decimals": 18,
+      "logoURI": "https://join.eros.fund/asset_USDT.svg"
+    }
+  ]
+}

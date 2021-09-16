@@ -5,8 +5,11 @@ import tokens, { mainnetTokens } from 'config/constants/tokens'
 import { PairState, usePairs } from './usePairs'
 import { wrappedCurrency } from '../utils/wrappedCurrency'
 
-const BUSD_MAINNET = mainnetTokens.busd
-const { wbnb: WBNB } = tokens
+// update 20210914
+// const BUSD_MAINNET = mainnetTokens.busd
+// const { wbnb: WBNB } = tokens
+const BUSD_MAINNET = mainnetTokens.usdt
+const { wxos: WBNB } = tokens
 
 /**
  * Returns the price in BUSD of the input currency
