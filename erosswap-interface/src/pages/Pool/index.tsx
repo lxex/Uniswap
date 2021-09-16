@@ -128,7 +128,7 @@ export default function Pool() {
               <ExternalLink
                 style={{ color: 'white', textDecoration: 'underline' }}
                 target="_blank"
-                href="https://uniswap.org/docs/v2/core-concepts/pools/"
+                href="/#"
               >
                 <TYPE.white fontSize={14}>Read more about providing liquidity</TYPE.white>
               </ExternalLink>
@@ -172,6 +172,7 @@ export default function Pool() {
               </EmptyProposals>
             ) : allV2PairsWithLiquidity?.length > 0 ? (
               <>
+              {/*
                 <ButtonSecondary>
                   <RowBetween>
                     <ExternalLink href={'https://uniswap.info/account/' + account}>
@@ -180,6 +181,7 @@ export default function Pool() {
                     <span> ↗</span>
                   </RowBetween>
                 </ButtonSecondary>
+              */}
 
                 {allV2PairsWithLiquidity.map(v2Pair => (
                   <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
@@ -195,7 +197,7 @@ export default function Pool() {
 
             <AutoColumn justify={'center'} gap="md">
               <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
-                {hasV1Liquidity ? 'Uniswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
+                {hasV1Liquidity ? 'Erosswap V1 liquidity found!' : "Don't see a pool you joined?"}{' '}
                 <StyledInternalLink id="import-pool-link" to={hasV1Liquidity ? '/migrate/v1' : '/find'}>
                   {hasV1Liquidity ? 'Migrate now.' : 'Import it.'}
                 </StyledInternalLink>

@@ -44,7 +44,6 @@ interface StakingModalProps {
 
 export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiquidityUnstaked }: StakingModalProps) {
   const { account, chainId, library } = useActiveWeb3React()
-
   // track and parse user input
   const [typedValue, setTypedValue] = useState('')
   const { parsedAmount, error } = useDerivedStakeInfo(typedValue, stakingInfo.stakedAmount.token, userLiquidityUnstaked)
@@ -103,7 +102,6 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
           })
           .catch((error: any) => {
             setAttempting(false)
-            console.log(error)
           })
       } else {
         setAttempting(false)
@@ -144,7 +142,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
       { name: 'verifyingContract', type: 'address' }
     ]
     const domain = {
-      name: 'Uniswap V2',
+      name: 'Erosswap V2',
       version: '1',
       chainId: chainId,
       verifyingContract: pairContract.address
@@ -177,6 +175,9 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
       .send('eth_signTypedData_v4', [account, data])
       .then(splitSignature)
       .then(signature => {
+        // console.log(signature)
+        // console.log(data)
+        // console.log(account)
         setSignatureData({
           v: signature.v,
           r: signature.r,
@@ -220,7 +221,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
 
             <TYPE.black>
               {hypotheticalRewardRate.multiply((60 * 60 * 24 * 7).toString()).toSignificant(4, { groupSeparator: ',' })}{' '}
-              UNI / week
+              EROS / week
             </TYPE.black>
           </HypotheticalRewardRate>
 
@@ -248,7 +249,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
         <LoadingView onDismiss={wrappedOnDismiss}>
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.largeHeader>Depositing Liquidity</TYPE.largeHeader>
-            <TYPE.body fontSize={20}>{parsedAmount?.toSignificant(4)} UNI-V2</TYPE.body>
+            <TYPE.body fontSize={20}>{parsedAmount?.toSignificant(4)} EROS-V2</TYPE.body>
           </AutoColumn>
         </LoadingView>
       )}
@@ -256,7 +257,7 @@ export default function StakingModal({ isOpen, onDismiss, stakingInfo, userLiqui
         <SubmittedView onDismiss={wrappedOnDismiss} hash={hash}>
           <AutoColumn gap="12px" justify={'center'}>
             <TYPE.largeHeader>Transaction Submitted</TYPE.largeHeader>
-            <TYPE.body fontSize={20}>Deposited {parsedAmount?.toSignificant(4)} UNI-V2</TYPE.body>
+            <TYPE.body fontSize={20}>Deposited {parsedAmount?.toSignificant(4)} EROS-V2</TYPE.body>
           </AutoColumn>
         </SubmittedView>
       )}

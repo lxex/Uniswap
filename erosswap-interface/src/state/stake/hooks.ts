@@ -1,6 +1,7 @@
 import { ChainId, CurrencyAmount, JSBI, Token, TokenAmount, WETH, Pair } from '@uniswap/sdk'
 import { useMemo } from 'react'
-import { DAI, UNI, USDC, USDT, WBTC } from '../../constants'
+// import { DAI, UNI, USDC, USDT, WBTC } from '../../constants'
+import { UNI } from '../../constants'
 import { STAKING_REWARDS_INTERFACE } from '../../constants/abis/staking-rewards'
 import { useActiveWeb3React } from '../../hooks'
 import { NEVER_RELOAD, useMultipleContractSingleData } from '../multicall/hooks'
@@ -9,30 +10,47 @@ import { tryParseAmount } from '../swap/hooks'
 export const STAKING_GENESIS = 1600387200
 
 export const REWARDS_DURATION_DAYS = 60
-
+// update 20210915
 // TODO add staking rewards addresses here
+// export const STAKING_REWARDS_INFO: {
+//   [chainId in ChainId]?: {
+//     tokens: [Token, Token]
+//     stakingRewardAddress: string
+//   }[]
+// } = {
+//   [ChainId.MAINNET]: [
+//     {
+//       tokens: [WETH[ChainId.MAINNET], DAI],
+//       stakingRewardAddress: '0xa1484C3aa22a66C62b77E0AE78E15258bd0cB711'
+//     },
+//     {
+//       tokens: [WETH[ChainId.MAINNET], USDC],
+//       stakingRewardAddress: '0x7FBa4B8Dc5E7616e59622806932DBea72537A56b'
+//     },
+//     {
+//       tokens: [WETH[ChainId.MAINNET], USDT],
+//       stakingRewardAddress: '0x6C3e4cb2E96B01F4b866965A91ed4437839A121a'
+//     },
+//     {
+//       tokens: [WETH[ChainId.MAINNET], WBTC],
+//       stakingRewardAddress: '0xCA35e32e7926b96A9988f61d510E038108d8068e'
+//     }
+//   ]
+// }
+const EROS = new Token(ChainId.XOS, '0x48b978a8250678f95663e8fbe3a1339fcd4fe943', 18, 'EROS', 'EROS')
+// const GOD = new Token(ChainId.XOS, '0x99dfa8964e635ebdbe347b02422083bfc3f20da0', 18, 'GOD', 'GOD')
+// const USDT = new Token(ChainId.XOS, '0x98a3d8d7f90dd73cba99b3b1315f5bc9d96280c6', 18, 'USDT', 'USDT')
+console.log(WETH[ChainId.XOS])
 export const STAKING_REWARDS_INFO: {
   [chainId in ChainId]?: {
     tokens: [Token, Token]
     stakingRewardAddress: string
   }[]
 } = {
-  [ChainId.MAINNET]: [
+  [ChainId.XOS]: [
     {
-      tokens: [WETH[ChainId.MAINNET], DAI],
-      stakingRewardAddress: '0xa1484C3aa22a66C62b77E0AE78E15258bd0cB711'
-    },
-    {
-      tokens: [WETH[ChainId.MAINNET], USDC],
-      stakingRewardAddress: '0x7FBa4B8Dc5E7616e59622806932DBea72537A56b'
-    },
-    {
-      tokens: [WETH[ChainId.MAINNET], USDT],
-      stakingRewardAddress: '0x6C3e4cb2E96B01F4b866965A91ed4437839A121a'
-    },
-    {
-      tokens: [WETH[ChainId.MAINNET], WBTC],
-      stakingRewardAddress: '0xCA35e32e7926b96A9988f61d510E038108d8068e'
+      tokens: [WETH[ChainId.XOS], EROS],
+      stakingRewardAddress: '0xef5b6b936e842e69aaae1b669cbb662deec9cd6e'
     }
   ]
 }
@@ -121,6 +139,7 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
       const totalSupplyState = totalSupplies[index]
       const rewardRateState = rewardRates[index]
       const periodFinishState = periodFinishes[index]
+      // console.log(balanceState)
 
       if (
         // these may be undefined if not logged in

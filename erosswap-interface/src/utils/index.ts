@@ -31,24 +31,24 @@ export function getEtherscanLink(
   data: string,
   type: 'transaction' | 'token' | 'address' | 'block'
 ): string {
-  return `https://explorer.eros.fund`
+  // return `https://explorer.eros.fund`
   // const prefix = `https://${ETHERSCAN_PREFIXES[chainId] || ETHERSCAN_PREFIXES[1]}etherscan.io`
-
-  // switch (type) {
-  //   case 'transaction': {
-  //     return `${prefix}/tx/${data}`
-  //   }
-  //   case 'token': {
-  //     return `${prefix}/token/${data}`
-  //   }
-  //   case 'block': {
-  //     return `${prefix}/block/${data}`
-  //   }
-  //   case 'address':
-  //   default: {
-  //     return `${prefix}/address/${data}`
-  //   }
-  // }
+  const prefix = `https://explorer.eros.fund`
+  switch (type) {
+    case 'transaction': {
+      return `${prefix}/tx/${data}`
+    }
+    case 'token': {
+      return `${prefix}/token/${data}`
+    }
+    case 'block': {
+      return `${prefix}/block/${data}`
+    }
+    case 'address':
+    default: {
+      return `${prefix}/address/${data}`
+    }
+  }
 }
 
 // shorten the checksummed version of the input address to have 0x + 4 characters at start and end
