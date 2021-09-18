@@ -7,8 +7,9 @@ import { useTranslation } from 'react-i18next'
 
 import styled from 'styled-components'
 
-import Logo from '../../assets/svg/logo.svg'
-import LogoDark from '../../assets/svg/logo_white.svg'
+
+import Wordmark from '../../assets/svg/wordmark_n.svg'
+import WordmarkDark from '../../assets/svg/wordmark_nwhite.svg'
 import { useActiveWeb3React } from '../../hooks'
 import { useDarkModeManager } from '../../state/user/hooks'
 import { useETHBalances, useAggregateUniBalance } from '../../state/wallet/hooks'
@@ -191,11 +192,19 @@ const Title = styled.a`
   }
 `
 
-const UniIcon = styled.div`
-  transition: transform 0.3s ease;
-  :hover {
-    transform: rotate(-5deg);
-  }
+// const UniIcon = styled.div`
+//   transition: transform 0.3s ease;
+//   :hover {
+//     transform: rotate(-5deg);
+//   }
+// `
+
+const TitleText = styled(Row)`
+  width: fit-content;
+  white-space: nowrap;
+  ${({ theme }) => theme.mediaWidth.upToExtraSmall`
+    display: none;
+  `};
 `
 
 const activeClassName = 'ACTIVE'
@@ -295,9 +304,12 @@ function Header({ history }: { history: any }) {
       </Modal>
       <HeaderRow>
         <Title href="." style={{}}>
-          <UniIcon>
-            <img width={'24px'} src={isDark ? LogoDark : Logo} alt="logo" />
-          </UniIcon>
+            {/*<UniIcon>
+              <img src={isDark ? LogoDark : Logo} alt="logo" />
+            </UniIcon>*/}
+            <TitleText>
+              <img style={{ marginLeft: '4px', marginTop: '4px' }} src={isDark ? WordmarkDark : Wordmark} alt="logo" />
+            </TitleText>
         </Title>
         <HeaderLinks>
           <StyledNavLink id={`swap-nav-link`} to={'/swap'} isActive={() => history.location.pathname.includes('/swap')}>
@@ -314,7 +326,7 @@ function Header({ history }: { history: any }) {
           >
             {t('pool')}
           </StyledNavLink>
-          <StyledNavLink id={`stake-nav-link`} to={'/uni'} isActive={() => history.location.pathname.includes('/uni')}>
+          <StyledNavLink id={`stake-nav-link`} to={'/eros'} isActive={() => history.location.pathname.includes('/eros')}>
             EROS
           </StyledNavLink>
           {/*<StyledNavLink

@@ -85,7 +85,7 @@ export default function UniBalanceContent({ setShowUniBalanceModal }: { setShowU
               <TYPE.white color="white">
                 {uniUnHarvested?.toFixed(4, { groupSeparator: ',' })}{' '}
                 {uniUnHarvested && (
-                  <StyledInternalLink onClick={() => setShowUniBalanceModal(false)} to="/uni">
+                  <StyledInternalLink onClick={() => setShowUniBalanceModal(false)} to="/eros">
                     (claim)
                   </StyledInternalLink>
                 )}
