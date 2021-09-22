@@ -11,17 +11,17 @@ The built contract artifacts can be browsed via [unpkg.com](https://unpkg.com/br
 
 `0x27711e450943bfa4769b4deb5d34a06e9af14882235f4a73096de67bd7deb58e`
 
-## WXOS
+## WGOD
 
-`0xf449f6a4560c60d3856afcc23d4a2e39c16e6dcd`
+`0x5b1254f2db4a3e7b011845f38ed1d12dfa96060d`
 
 ## Factory
 
-`0x1f8a2ffd90b2d8dbae3eef5628f8699ddd85d309`
+`0xda87b058c42f22ffcf72fcf66834b97488bb0d67`
 
 ## Router
 
-`0x397a3356a93ababab475f53d77d2e26250ae0e6b`
+`0x316759c4245ef81643d15d1665b6c22a8b04338c`
 
 ## multicall
 
