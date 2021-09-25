@@ -10,7 +10,7 @@ import Logo from '../Logo'
 // const getTokenLogoURL = (address: string) =>
 //   `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${address}/logo.png`
 const getTokenLogoURL = (address: string) =>
-  `https://join.eros.fund/static/${address}.png`
+  `https://swap.eros.fund/images/${address}.png`
 
 const StyledEthereumLogo = styled.img<{ size: string }>`
   width: ${({ size }) => size};

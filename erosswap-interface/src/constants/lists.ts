@@ -2,7 +2,7 @@
 export const DEFAULT_TOKEN_LIST_URL = 'tokens.uniswap.eth'
 // update 20210915
 export const DEFAULT_LIST_OF_LISTS: string[] = [
-  'https://join.eros.fund/tokens.json',
+  'https://join.eros.fund/g_tokens.json',
   // DEFAULT_TOKEN_LIST_URL,
   // 't2crtokens.eth', // kleros
   // 'tokens.1inch.eth', // 1inch
