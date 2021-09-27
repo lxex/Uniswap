@@ -140,6 +140,10 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
       const rewardRateState = rewardRates[index]
       const periodFinishState = periodFinishes[index]
       // console.log(balanceState)
+      // console.log(earnedAmountState)
+      // console.log(totalSupplyState)
+      // console.log(rewardRateState)
+      // console.log(periodFinishState)
 
       if (
         // these may be undefined if not logged in
@@ -160,6 +164,11 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
           rewardRateState.error ||
           periodFinishState.error
         ) {
+          // console.log(balanceState?.error)
+          // console.log(earnedAmountState?.error)
+          // console.log(totalSupplyState.error)
+          // console.log(rewardRateState.error)
+          // console.log(periodFinishState.error)
           console.error('Failed to load staking rewards info')
           return memo
         }
