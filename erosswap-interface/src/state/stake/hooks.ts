@@ -39,7 +39,7 @@ export const REWARDS_DURATION_DAYS = 60
 // }
 const EROS = new Token(ChainId.XOS, '0x48b978a8250678f95663e8fbe3a1339fcd4fe943', 18, 'EROS', 'EROS')
 // const GOD = new Token(ChainId.XOS, '0x99dfa8964e635ebdbe347b02422083bfc3f20da0', 18, 'GOD', 'GOD')
-// const USDT = new Token(ChainId.XOS, '0x98a3d8d7f90dd73cba99b3b1315f5bc9d96280c6', 18, 'USDT', 'USDT')
+const USDT = new Token(ChainId.XOS, '0x98a3d8d7f90dd73cba99b3b1315f5bc9d96280c6', 18, 'USDT', 'USDT')
 console.log(WETH[ChainId.XOS])
 export const STAKING_REWARDS_INFO: {
   [chainId in ChainId]?: {
@@ -50,7 +50,11 @@ export const STAKING_REWARDS_INFO: {
   [ChainId.XOS]: [
     {
       tokens: [WETH[ChainId.XOS], EROS],
-      stakingRewardAddress: '0xef5b6b936e842e69aaae1b669cbb662deec9cd6e'
+      stakingRewardAddress: '0x0e0ee515c6e362516ea2cf401e92e84a82fe3341'
+    },
+    {
+      tokens: [WETH[ChainId.XOS], USDT],
+      stakingRewardAddress: '0x7392fba8477ac7dfd987fe0a3fbfe8f5f699be2e'
     }
   ]
 }
